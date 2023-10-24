@@ -43,7 +43,7 @@ const Projetos = () => {
               </div>
               {/* tittle */}
               <div className="absolute bottom-full left-12 group-hover:bottom-14 transition-all duration-700 z-50">
-                <span className="text-3xl text-white">Project Title</span>
+                <span className="text-3xl text-white">Food Store</span>
               </div>
             </div>
           </motion.div>
