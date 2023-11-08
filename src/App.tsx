@@ -1,6 +1,6 @@
 import './App.css'
 import Header from './components/Header/Header'
-import Body from './components/Body/Body'
+import Body from './components/Sobre/Sobre'
 import Nav from './components/Nav/Nav'
 import Projetos from './components/Projetos/Projetos'
 import Footer from './components/Formulario/Form'
