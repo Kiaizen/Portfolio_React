@@ -3,8 +3,10 @@ import { fadeIn } from "../../Variants";
 import Img1 from "../../assets/portfolio-img1.png";
 import Img2 from "../../assets/portfolio-img2.png";
 import Img3 from "../../assets/portfolio-img3.png";
+import { useTranslation } from "react-i18next";
 
 const Projetos = () => {
+  const { t } = useTranslation();
   return (
     <section className="section" id="Projetos">
       <div className="container mx-auto">
@@ -19,13 +21,13 @@ const Projetos = () => {
             {/* text */}
             <div className=" my-4">
               <h2 className="h2 leading-tight text-accent">
-                Meus ultimos <br />
-                projetos.
+                {t('projects')} <br />
+                {t('ptext')}
               </h2>
               <p className=" max-w-sm mb-6">
-                Comecei fazendo cursos na Udemy de web moderno onde aprendi o básico sobre html,css e js. Agora estou estudando React pela Udemy também.
+                {t('ptext1')}
               </p>
-              <button className="btn btn-sm">Ver todos os projetos</button>
+              <button className="btn btn-sm">{t('ptext2')}</button>
             </div>
             {/* image */}
             <div className="group relative overflow-hidden border-2 border-white/50 rounded-xl w-11/12 mb-4">

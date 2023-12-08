@@ -4,8 +4,10 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../../Variants";
 import HeaderLinks from "./HeaderLinks";
 import HeaderImg from "./HeaderImg";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
+  const { t } = useTranslation();
   return (
     <section
       className="min-h-[85vh] lg:min-h-[78vh] flex items-center"
@@ -33,7 +35,7 @@ const Header = () => {
               viewport={{ once: false, amount: 0.7 }}
               className="mb-6 text-[36px] lg:text-[60px] font-secondary font-semibold uppercase leading-[1]"
             >
-              <span className=" text-white mr-4">Eu Sou um</span>
+              <span className=" text-white mr-4">{t('header')}</span>
               <TypeAnimation
                 sequence={[
                   "Developer",
@@ -56,12 +58,11 @@ const Header = () => {
               viewport={{ once: false, amount: 0.7 }}
               className="mb-8 max-w-lg mx-auto lg:mx-0"
             >
-              Olá mundo! Seja bem vindo ao meu primeiro portfólio, feito em
-              React e tailwind, espero que goste.
+              {t('welcome')}
             </motion.p>
-            <HeaderLinks/>
-          </div>
-         <HeaderImg/>
+            <HeaderLinks />
+          </div >
+          <HeaderImg/>
         </div>
       </div>
     </section>
