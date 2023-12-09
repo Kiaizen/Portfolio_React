@@ -1,8 +1,0 @@
-{
-    "header": {
-        "message": "Welcome to my portfolio"
-    },
-    "home": {
-        "body": "My first portfolio made in React,TypeScript and Tailwind CSS"
-    }
-}

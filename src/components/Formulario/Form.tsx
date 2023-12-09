@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { fadeIn } from "../../Variants";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <section id="Footer" className="py-40 pb-40 lg:section">
       <div className="container mx-auto">
@@ -12,15 +14,15 @@ const Footer = () => {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}
-            className="flex-1 flex justify-start items-center"
+            className="flex-1 flex justify-center items-center"
           >
             <div>
               <h4 className="text-xl uppercase text-blue-500 font-medium mb-2 tracking-wide">
-                Entre em contato
+                {t('form')}
               </h4>
               <h2 className="text-[45px] lg:text-[90px] leading-none mb-12">
-                Vamos trabalhar <br />{" "}
-                <span className="text-purple-500">juntos!</span>
+                {t('ftext1')} <br />{" "}
+                <span className="text-purple-500">{t('ftext2')}</span>
               </h2>
             </div>
           </motion.div>
@@ -35,18 +37,18 @@ const Footer = () => {
             <input
               className="bg-transparent border-b py-3 outline-none w-full  placeholder:text-white focus:border-accent transition-all"
               type="text"
-              placeholder="Seu nome"
+              placeholder={t('ftext3')}
             />
             <input
               className="bg-transparent border-b py-3 outline-none w-full  placeholder:text-white focus:border-accent transition-all"
               type="text"
-              placeholder="Seu email"
+              placeholder={t('ftext4')}
             />
             <textarea
               className="bg-transparent border-b py-12 outline-none w-full  placeholder:text-white focus:border-accent transition-all resize-none"
-              placeholder="Sua mensagem"
+              placeholder={t('ftext5')}
             ></textarea>
-            <button className="btn btn-lg">Enviar mensagem</button>
+            <button className="btn btn-lg">{t('ftext6')}</button>
           </motion.form>
         </div>
       </div>

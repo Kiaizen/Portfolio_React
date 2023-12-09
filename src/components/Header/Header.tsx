@@ -5,6 +5,7 @@ import { fadeIn } from "../../Variants";
 import HeaderLinks from "./HeaderLinks";
 import HeaderImg from "./HeaderImg";
 import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "../../translations/languageSwitcher";
 
 const Header = () => {
   const { t } = useTranslation();
@@ -16,15 +17,24 @@ const Header = () => {
       <div className="container mx-auto">
         <div className="flex flex-col gap-y-8 lg:flex-row lg:items-center lg:gap-x-12">
           <div className="flex-1 text-center font-secondary lg:text-left">
-            <div className="flex justify-center mb-20 lg:justify-start">
-              <img src={logo} alt="Felipe Harão" />
-            </div>
+          <motion.div
+              variants={fadeIn("up", 0.4)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.7 }} 
+              className="flex gap-8 lg:gap-80 justify-center mb-20 lg:justify-start">
+             <div className="flex  gap-4 items-baseline">
+              <h1 className="text-[45px] font-bold">Felipe</h1>
+              <img src={logo} alt="Harão" />
+             </div>
+              <LanguageSwitcher/>
+            </motion.div>
             <motion.h1
               variants={fadeIn("up", 0.3)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
-              className="text-[55px] font-bold leading-[0.8] lg:text-[110px]"
+              className="text-[55px] font-bold leading-[0.8] lg:text-[110px] mb-4"
             >
               Felipe <span>Harão</span>
             </motion.h1>
@@ -33,9 +43,9 @@ const Header = () => {
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
-              className="mb-6 text-[36px] lg:text-[60px] font-secondary font-semibold uppercase leading-[1]"
+              className="mb-6 text-[36px] lg:text-[50px] font-secondary font-semibold uppercase leading-[1]"
             >
-              <span className=" text-white mr-4">{t('header')}</span>
+                <span className=" text-white mr-4">{t('header')}</span>
               <TypeAnimation
                 sequence={[
                   "Developer",
