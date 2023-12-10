@@ -47,7 +47,7 @@ i18n.use(initReactI18next).use(LanguageDetector).init({
         greeting: "Olá",
         header: "Eu sou um",
         welcome:
-          "Olá mundo! Seja bem vindo ao meu primeiro portfólio, feito em React, TypeScript e tailwind, espero que goste!",
+          "Olá mundo! Seja bem vindo ao meu primeiro portfólio, feito em React, TypeScript e Tailwind, espero que goste!",
         about: "Sobre mim",
         atext:
           "Sou um Freelance Front-end Dev com mais de 6 meses de experiência.",
