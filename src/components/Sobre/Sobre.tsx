@@ -31,7 +31,7 @@ const Body = () => {
             viewport={{ once: false, amount: 0.3 }}
             className="flex-1"
           >
-            <h2 className="h2 text-accent">{t('about')}</h2>
+            <h2 className="h2 font-bold text-accent">{t('about')}</h2>
             <h3 className="h3 mb-4">
               {t('atext')}
             </h3>

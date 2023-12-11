@@ -17,7 +17,7 @@ const Footer = () => {
             className="flex-1 flex justify-center items-center"
           >
             <div>
-              <h4 className="text-xl uppercase text-blue-500 font-medium mb-2 tracking-wide">
+              <h4 className="text-xl uppercase font-bold text-blue-500 mb-2 tracking-wide">
                 {t('form')}
               </h4>
               <h2 className="text-[45px] lg:text-[90px] leading-none mb-12">

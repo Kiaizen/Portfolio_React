@@ -20,7 +20,7 @@ const Projetos = () => {
           >
             {/* text */}
             <div className=" my-4">
-              <h2 className="h2 leading-tight text-accent">
+              <h2 className="h2 leading-tight font-bold text-accent">
                 {t('projects')} <br />
                 {t('ptext')}
               </h2>
