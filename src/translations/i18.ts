@@ -34,7 +34,7 @@ i18n.use(initReactI18next).use(LanguageDetector).init({
         pwtext: "Your city",
         pwtext1: "Searching...",
         pwtext2: "Search",
-        pwtext3: "Verify the city and try again.",
+        pwtext3: "Check the city and try again.",
         pwtext4: "City: ",
         pwtext5: "Temperature: ",
         form: 'Get in touch',
