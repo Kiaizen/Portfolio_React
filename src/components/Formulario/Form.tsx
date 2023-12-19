@@ -48,7 +48,9 @@ const Footer = () => {
               className="bg-transparent border-b py-12 outline-none w-full  placeholder:text-white focus:border-accent transition-all resize-none"
               placeholder={t('ftext5')}
             ></textarea>
-            <button className="btn btn-lg">{t('ftext6')}</button>
+            <div>
+            <button className="btn btn-lg text-lg font-bold">{t('ftext6')}</button>
+            </div>
           </motion.form>
         </div>
       </div>

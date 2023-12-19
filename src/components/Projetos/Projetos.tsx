@@ -1,12 +1,21 @@
 import { motion } from "framer-motion";
 import { fadeIn } from "../../Variants";
 import Img1 from "../../assets/portfolio-img1.png";
-import Img2 from "../../assets/portfolio-img2.png";
+import Img2 from "../../assets/OpenWReact.webp";
 import Img3 from "../../assets/portfolio-img3.png";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
+import Weather from "./Weather";
 
 const Projetos = () => {
   const { t } = useTranslation();
+
+  const [weatherToggle,setWeatherToggle] = useState(false)
+
+  const projectWToggle = () => {
+    setWeatherToggle(true)
+  }
+
   return (
     <section className="section" id="Projetos">
       <div className="container mx-auto">
@@ -57,7 +66,7 @@ const Projetos = () => {
             className="flex-1 flex flex-col gap-y-8"
           >
             {/* image */}
-            <div className="group relative overflow-hidden border-2 border-white/50 rounded-xl w-11/12">
+            {!weatherToggle ? (<div onClick={projectWToggle} className="group relative overflow-hidden border-2 border-white/50 rounded-xl w-11/12">
               {/* Overlay */}
               <div className="group-hover:bg-black/70 w-full h-full absolute z-40 transition-all duration-300"></div>
               {/* img */}
@@ -72,9 +81,9 @@ const Projetos = () => {
               </div>
               {/* tittle */}
               <div className="absolute bottom-full left-12 group-hover:bottom-14 transition-all duration-700 z-50">
-                <span className="text-3xl text-white">Project Title</span>
+                <span className="text-3xl text-white">WeatherAPI</span>
               </div>
-            </div>
+            </div>) : (<Weather/>)}
             {/* image */}
             <div className="group relative overflow-hidden border-2 border-white/50 rounded-xl w-11/12">
               {/* Overlay */}
