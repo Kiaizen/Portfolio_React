@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { useTranslation } from "react-i18next";
 import OpenW from '../../assets/openweather.svg'
 import axios from "axios"
 
@@ -14,6 +15,8 @@ const Weather = () => {
     const [confirm,setConfirm] = useState('')
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState<string | null>(null);
+
+    const { t } = useTranslation();
 
     useEffect(()=> {
         if(!confirm) return;
@@ -41,29 +44,29 @@ const Weather = () => {
     }
 
   return (
-    <div className="flex-col border rounded-2xl flex items-center justify-center w-11/12 h-[300px]">
+    <div className="flex-col border rounded-2xl flex items-center justify-center w-11/12 h-[290px]">
         <div>
             <img src={OpenW} alt="OpenWeatherIcon" className="flex-1" />
         </div>
         <div>
             <form className="flex flex-1 gap-2  rounded-2xl p-6" >
-                <input type="text" onChange={cityHandler} className="bg-transparent border-b focus:border-accent outline-none placeholder:text-white" placeholder="Sua cidade" />
-                <button className="btn btn-lg font-bold" onClick={confirmHandler}>{loading ? 'Pesquisando...' : 'Pesquisar'}</button>
+                <input type="text" onChange={cityHandler} className="bg-transparent border-b focus:border-accent outline-none placeholder:text-white" placeholder={t('pwtext')} />
+                <button className="btn btn-lg font-bold" onClick={confirmHandler}>{loading ? `${t('pwtext1')}` : `${t('pwtext2')}`}</button>
             </form>
         </div>
         <div>
             {error ? (
                 <div>
-                    <p className="text-red-500 font-bold text-2xl text-center">{error} Verifique a cidade e tente novamente.</p>
+                    <p className="text-red-500 font-bold text-2xl text-center">{error} {t('pwtext3')}</p>
                 </div>
             ) : (condition &&
                     <div className="flex  rounded-xl items-center">
                         <div key={condition.name}>
-                        <h2>Cidade: {condition.name}</h2>
-                        <span>Temperatura: {condition.main.temp}ºC</span>
+                        <h2>{t('pwtext4')}{condition.name}</h2>
+                        <span>{t('pwtext5')}{condition.main.temp}ºC</span>
                         </div>
                         <div>
-                            <img src={`https://openweathermap.org/img/wn/${condition.weather[0].icon}@2x.png`} alt="Icone" />
+                            <img src={`https://openweathermap.org/img/wn/${condition.weather[0].icon}@2x.png`} alt="Icon" />
                         </div>
                     </div>)
             }

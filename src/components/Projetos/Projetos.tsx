@@ -8,9 +8,9 @@ import { useState } from "react";
 import Weather from "./Weather";
 
 const Projetos = () => {
-  const { t } = useTranslation();
-
   const [weatherToggle,setWeatherToggle] = useState(false)
+  
+  const { t } = useTranslation();
 
   const projectWToggle = () => {
     setWeatherToggle(true)
