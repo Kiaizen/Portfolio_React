@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next";
 import OpenW from '../../assets/openweather.svg'
+import BackAw from '../../assets/turn-back.png'
 import axios from "axios"
 
 type Condition = {
@@ -8,8 +9,9 @@ type Condition = {
     name: string;
     weather:[{icon:string}]
 }
+type onSelectFunction = () => void;
 
-const Weather = () => {
+const Weather = ({onSelect}: {onSelect: onSelectFunction }) => {
     const [condition,setCondition] = useState<Condition | null>(null)
     const [city,setCity] = useState('')
     const [confirm,setConfirm] = useState('')
@@ -44,12 +46,15 @@ const Weather = () => {
     }
 
   return (
-    <div className="flex-col border rounded-2xl flex items-center justify-center w-11/12 h-[290px]">
-        <div>
-            <img src={OpenW} alt="OpenWeatherIcon" className="flex-1" />
+    <div className="flex-col border rounded-xl flex  w-11/12 h-72" >
+        <div className="flex items-center justify-start gap-40">
+            <button onClick={onSelect} className=" w-6 ml-5">
+                <img src={BackAw} alt="Back button" />
+            </button>
+            <img src={OpenW} alt="OpenWeatherIcon" className="" />
         </div>
         <div>
-            <form className="flex flex-1 gap-2  rounded-2xl p-6" >
+            <form className="flex gap-2  rounded-2xl p-6 justify-center" >
                 <input type="text" onChange={cityHandler} className="bg-transparent border-b focus:border-accent outline-none placeholder:text-white" placeholder={t('pwtext')} />
                 <button className="btn btn-lg font-bold" onClick={confirmHandler}>{loading ? `${t('pwtext1')}` : `${t('pwtext2')}`}</button>
             </form>
@@ -60,7 +65,7 @@ const Weather = () => {
                     <p className="text-red-500 font-bold text-2xl text-center">{error} {t('pwtext3')}</p>
                 </div>
             ) : (condition &&
-                    <div className="flex  rounded-xl items-center">
+                    <div className="flex  rounded-xl items-center justify-center">
                         <div key={condition.name}>
                         <h2>{t('pwtext4')}{condition.name}</h2>
                         <span>{t('pwtext5')}{condition.main.temp}ºC</span>

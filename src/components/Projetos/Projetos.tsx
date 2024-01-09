@@ -13,7 +13,7 @@ const Projetos = () => {
   const { t } = useTranslation();
 
   const projectWToggle = () => {
-    setWeatherToggle(true)
+    weatherToggle ? (setWeatherToggle(false)) : (setWeatherToggle(true))
   }
 
   return (
@@ -39,7 +39,7 @@ const Projetos = () => {
               <button className="btn btn-sm">{t('ptext2')}</button>
             </div>
             {/* image */}
-            <div className="group relative overflow-hidden border-2 border-white/50 rounded-xl w-11/12 mb-4">
+            <div className="group relative overflow-hidden border-2 border-white/50 rounded-xl w-11/12 h-72 mb-4">
               {/* Overlay */}
               <div className="group-hover:bg-black/70 w-full h-full absolute z-40 transition-all duration-300"></div>
               {/* img */}
@@ -66,7 +66,7 @@ const Projetos = () => {
             className="flex-1 flex flex-col gap-y-8"
           >
             {/* image */}
-            {!weatherToggle ? (<div onClick={projectWToggle} className="group relative overflow-hidden border-2 border-white/50 rounded-xl w-11/12">
+            {!weatherToggle ? (<div onClick={projectWToggle} className="group relative overflow-hidden border-2 border-white/50 rounded-xl w-11/12 h-72">
               {/* Overlay */}
               <div className="group-hover:bg-black/70 w-full h-full absolute z-40 transition-all duration-300"></div>
               {/* img */}
@@ -83,9 +83,9 @@ const Projetos = () => {
               <div className="absolute bottom-full left-12 group-hover:bottom-14 transition-all duration-700 z-50">
                 <span className="text-3xl text-white">WeatherAPI</span>
               </div>
-            </div>) : (<Weather/>)}
+            </div>) : (<Weather onSelect={projectWToggle}/>)}
             {/* image */}
-            <div className="group relative overflow-hidden border-2 border-white/50 rounded-xl w-11/12">
+            <div className="group relative overflow-hidden border-2 border-white/50 rounded-xl w-11/12 h-72">
               {/* Overlay */}
               <div className="group-hover:bg-black/70 w-full h-full absolute z-40 transition-all duration-300"></div>
               {/* img */}

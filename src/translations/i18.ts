@@ -19,7 +19,7 @@ i18n.use(initReactI18next).use(LanguageDetector).init({
           "Hello world! Welcome to my first portfolio, made using React, TypeScript and Tailwind, hope you like it!",
         about: "About me",
         atext:
-          "I'm a Freelancer Front-end Dev with more than 6 months of experience",
+          "I'm a Freelancer Front-end Dev with more than 8 months of experience",
         atext1:
           "I've always had an affinity with computers, and now i'm using that to my advantage for both work and leisure. I'm improving myself every day.",
         atext2: "Months of",
@@ -37,6 +37,7 @@ i18n.use(initReactI18next).use(LanguageDetector).init({
         pwtext3: "Check the city and try again.",
         pwtext4: "City: ",
         pwtext5: "Temperature: ",
+        pwtext6: "Back",
         form: 'Get in touch',
         ftext1: "Let's work",
         ftext2: 'together!',
@@ -56,7 +57,7 @@ i18n.use(initReactI18next).use(LanguageDetector).init({
           "Olá mundo! Seja bem vindo ao meu primeiro portfólio, feito em React, TypeScript e Tailwind, espero que goste!",
         about: "Sobre mim",
         atext:
-          "Sou um Freelance Front-end Dev com mais de 6 meses de experiência.",
+          "Sou um Freelance Front-end Dev com mais de 8 meses de experiência.",
         atext1:
           "Sempre tive afinidade com computadores e agora estou usando isso a meu favor para trabalho além do lazer, estou me aperfeiçoando a cada dia.",
         atext2: "Meses de",
@@ -74,6 +75,7 @@ i18n.use(initReactI18next).use(LanguageDetector).init({
         pwtext3: "Verifique a cidade e tente novamente.",
         pwtext4: "Cidade: ",
         pwtext5: "Temperatura: ",
+        pwtext6: "Voltar",
         form: 'Entre em contato',
         ftext1: "Vamos trabalhar",
         ftext2: 'juntos!',
