@@ -1,6 +1,6 @@
 ---
 
-# Portfolio_React
+# Portfolio React
 
 Meu primeiro portfólio feito em React, TypeScript e Tailwind, mostrando algumas hard skills em desenvolvimento web. Também inclui alguns projetos como AluraFlix, WeatherAPI e AluraGeek.
 
