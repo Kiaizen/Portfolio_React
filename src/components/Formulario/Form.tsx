@@ -34,10 +34,8 @@ const Footer = () => {
             viewport={{ once: false, amount: 0.3 }}
             className="flex-1 border rounded-2xl flex flex-col gap-y-6 pb-6 p-6 items-start"
             name="contact"
-            method="POST"
-            data-netlify="true"
+            netlify
           >
-            <input type="hidden" name="form-name" value="contact" />
             <input
               className="bg-transparent border-b py-3 outline-none w-full  placeholder:text-white focus:border-accent transition-all"
               type="text"
