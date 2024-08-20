@@ -41,7 +41,7 @@ const Body = () => {
             <div className="flex gap-x-6 lg:gap-x-10 mb-12">
               <div>
                 <div className="text-[40px] font-tertiary text-gradient mb-2">
-                  {inView ? <CountUp start={0} end={8} duration={3} /> : null}
+                  {inView ? <CountUp start={0} end={16} duration={3} /> : null}
                 </div>
                 <div className="font-primary text-sm tracking-[2px]">
                   {t('atext2')} <br />
@@ -50,7 +50,7 @@ const Body = () => {
               </div>
               <div>
                 <div className="text-[40px] font-tertiary text-gradient mb-2">
-                  {inView ? <CountUp start={0} end={10} duration={3} /> : null}
+                  {inView ? <CountUp start={0} end={20} duration={3} /> : null}
                 </div>
                 <div className="font-primary text-sm tracking-[2px]">
                   {t('atext4')} <br />
@@ -59,7 +59,7 @@ const Body = () => {
               </div>
               <div>
                 <div className="text-[40px] font-tertiary text-gradient mb-2">
-                  {inView ? <CountUp start={0} end={12} duration={3} /> : null}
+                  {inView ? <CountUp start={0} end={25} duration={3} /> : null}
                 </div>
                 <div className="font-primary text-sm tracking-[2px]">
                   {t('atext5')} <br />
