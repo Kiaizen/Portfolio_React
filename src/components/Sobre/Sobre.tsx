@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../../Variants";
 import { useTranslation } from "react-i18next";
 
-const Body = () => {
+const About = () => {
   const { t } = useTranslation();
   const [ref, inView] = useInView({
     threshold: 0.5,
@@ -73,4 +73,4 @@ const Body = () => {
   );
 };
 
-export default Body;
+export default About;

@@ -26,7 +26,7 @@ i18n.use(initReactI18next).use(LanguageDetector).init({
         atext3: "Experience",
         atext4: "Projects",
         atext5: "Courses",
-        projects: "My lastest",
+        projects: "My latest",
         ptext: "projects",
         ptext1:
           "I started by taking courses on Udemy in web development, where i learned the basics of HTML, CSS, and JS. Currently, i'm studying React.",
