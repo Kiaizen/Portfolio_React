@@ -1,4 +1,4 @@
-module.exports = {
+export default  {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     fontFamily: {
@@ -21,11 +21,10 @@ module.exports = {
       colors: {
         primary: '#0a0a0a',
         accent: '#B809C3',
-      },
-      backgroundImage: {
-        site: "url('./assets/site-bg.jpg')",
-        about: "url('./assets/about.png')",
-        services: "url('./assets/services.png')",
+        bgprimary: '#2F006B',
+        bgsecondary: '#220B41',
+        bgtertiary: '#7840C0',
+        bgquaternary: '#A875EB'
       },
     },
   },

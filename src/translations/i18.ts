@@ -1,4 +1,3 @@
-// i18n.js
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -14,9 +13,9 @@ i18n.use(initReactI18next).use(LanguageDetector).init({
     en: {
       translation: {
         greeting: "Hello",
-        header: "I am a",
+        intro: "I am a",
         welcome:
-          "Hello world! Welcome to my first portfolio, made using React, TypeScript and Tailwind, hope you like it!",
+          "Welcome to my first portfolio, made using React, TypeScript and Tailwind, hope you like it!",
         about: "About me",
         atext:
           "I'm a Freelancer Front-end Dev with more than 16 months of experience",
@@ -52,9 +51,9 @@ i18n.use(initReactI18next).use(LanguageDetector).init({
     'pt-BR': {
       translation: {
         greeting: "Olá",
-        header: "Eu sou um",
+        intro: "Eu sou um",
         welcome:
-          "Olá mundo! Seja bem vindo ao meu primeiro portfólio, feito em React, TypeScript e Tailwind, espero que goste!",
+          "Seja bem vindo ao meu primeiro portfólio, feito em React, TypeScript e Tailwind, espero que goste!",
         about: "Sobre mim",
         atext:
           "Sou um Freelance Front-end Dev com mais de 16 meses de experiência.",

@@ -1,4 +1,3 @@
-// LanguageSwitcher.js
 import { useTranslation } from 'react-i18next';
 import Us from '../assets/estadosUnidos.png'
 import Br from '../assets/brasil.png'
@@ -11,14 +10,13 @@ const LanguageSwitcher = () => {
   };
 
   return (
-    <div className='flex justify-end gap-2 items-center'>
-      <button onClick={() => changeLanguage('en')}>
-        <img src={Us} alt="American flag" className='w-8' />
+    <div className='flex  gap-2'>
+      <button className='pt-2' onClick={() => changeLanguage('en')}>
+        <img src={Us} alt="American flag" className='w-6 lg:w-8' />
       </button>
-      <button onClick={() => changeLanguage('pt-BR')}>
-        <img src={Br} alt="Brazilian flag" className='w-7'/>
+      <button className='pt-2' onClick={() => changeLanguage('pt-BR')}>
+        <img src={Br} alt="Brazilian flag" className='w-5 lg:w-7'/>
       </button>
-      {/* Add more language buttons as needed */}
     </div>
   );
 };

@@ -1,21 +1,18 @@
 import './App.css'
-import Header from './components/Header/Header'
-import About from './components/Sobre/Sobre'
-import Nav from './components/Nav/Nav'
-import Projetos from './components/Projetos/Projetos'
-import Footer from './components/Formulario/Form'
+import About from './components/About/About'
+import Contact from './components/Contact/Contact'
+import Projects from './components/Projects/Projects'
+import Intro from './components/Intro/Intro'
 
 function App() {
 
   return (
-   <div className='bg-site bg-no-repeat bg-cover overflow-hidden'>
-    <Nav/>
-    <Header/>
-    <About/>
-    <Projetos />
-    <Footer/>
-   </div>
-      
+    <div>
+      <Intro/>
+      <About/>
+      <Projects/>
+      <Contact/>
+    </div>
   )
 }
 

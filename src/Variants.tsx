@@ -18,6 +18,7 @@ export const fadeIn = (direction:string, delay:number) => {
           ease: [0.25, 0.25, 0.25, 0.75],
         },
       },
+      exit: { opacity: 0, y: 20, transition: { duration: 0.3 } }
     };
   };
   
