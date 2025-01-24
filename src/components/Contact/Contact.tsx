@@ -1,14 +1,13 @@
 import { motion } from "framer-motion";
 import { fadeIn } from "../../Variants";
 import { useTranslation } from "react-i18next";
+import Wrapper from "../wrapper/wrapper";
 
 const Contact = () => {
   const { t } = useTranslation();
   return (
     <section id="Contact" className="py-40 bg-gradient-to-b from-bgsecondary to-bgprimary">
-      <div className="container mx-auto">
-        <div className="flex flex-col lg:flex-row">
-          {/* texto */}
+      <Wrapper>
           <motion.div
             variants={fadeIn("down", 0.5)}
             initial="hidden"
@@ -26,7 +25,6 @@ const Contact = () => {
               </h2>
             </div>
           </motion.div>
-          {/*form*/}
           <motion.form
             variants={fadeIn("right", 0.5)}
             initial="hidden"
@@ -55,8 +53,7 @@ const Contact = () => {
               </button>
             </div>
           </motion.form>
-        </div>
-      </div>
+        </Wrapper>
     </section>
   );
 };

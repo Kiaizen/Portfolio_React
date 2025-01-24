@@ -45,10 +45,10 @@
     @apply font-secondary text-lg leading-8 text-white;
   }
   .h2 {
-    @apply font-primary text-[32px] mb-6 tracking-[10%] uppercase;
+    @apply font-primary text-[32px] my-6 tracking-[10%] uppercase;
   }
   .h3 {
-    @apply font-primary font-semibold text-[26px] mb-6 leading-[46px];
+    @apply font-primary font-semibold text-[26px] my-6 leading-[46px];
   }
   .btn {
     @apply rounded-full font-primary text-white font-medium;
@@ -65,7 +65,5 @@
   .text-gradient {
     @apply bg-gradient-to-r text-transparent bg-clip-text from-[#42A6E3] to-[#FF56F6] font-bold font-primary hover:from-[#FF56F6] hover:to-[#42A6E3];
   }
-  .section {
-    @apply py-8 lg:py-24 h-screen flex items-center;
-  }
+  
 }

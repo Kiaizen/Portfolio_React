@@ -5,8 +5,6 @@ import { useTranslation } from "react-i18next";
 import Wrapper from "../wrapper/wrapper";
 import IntroLinks from "./IntroLinks";
 import IntroImg from "./IntroImg";
-import LanguageSwitcher from "../../translations/languageSwitcher";
-import logo from "../../assets/Harão.svg";
 
 const Intro = () => {
   const { t } = useTranslation();
@@ -15,27 +13,7 @@ const Intro = () => {
       className=" bg-gradient-to-b from-bgprimary to-bgsecondary"
       id="Intro"
     >
-            <motion.div
-              variants={fadeIn("up", 0.4)}
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.7 }}
-              className="mx-auto p-4 flex justify-between lg:justify-center items-center gap-4"
-            >
-              <a href="/">
-                <div className="flex gap-2 items-center">
-                  <h1 className="lg:text-4xl font-bold">Felipe</h1>
-                  <img src={logo} className="w-14 lg:w-auto" alt="Harão" />
-                </div>
-              </a>
-              <div className="hidden lg:flex gap-6 font-secondary text-4xl font-bold">
-              <a href="#About" >Sobre</a>
-              <a href="#Projects" >Projetos</a>
-              <a href="#Contact" >Contato</a>
-
-              </div>
-              <LanguageSwitcher />
-            </motion.div>
+           
       <Wrapper>
         <div className="flex flex-col lg:gap-x-2 flex-1 text-center font-secondary">
             <motion.div
