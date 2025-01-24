@@ -15,7 +15,7 @@ const About = () => {
       className="flex items-center bg-gradient-to-b from-bgsecondary to-bgprimary"
     >
       <Wrapper>
-        <div>
+        <div className="font-tertiary">
           <motion.div
             variants={fadeIn("right", 0.5)}
             initial="hidden"

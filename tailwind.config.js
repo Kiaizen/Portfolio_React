@@ -4,7 +4,7 @@ export default  {
     fontFamily: {
       primary: 'Orbitron',
       secondary: 'Kalnia',
-      tertiary: 'Aldrich',
+      tertiary: 'Montserrat',
     },
     container: {
       padding: {
