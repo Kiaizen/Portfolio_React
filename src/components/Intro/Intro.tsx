@@ -44,7 +44,7 @@ const Intro = () => {
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
-              className="text-3xl mb-8 max-w-lg mx-auto lg:mx-0 text-left font-semibold"
+              className="text-3xl mb-8 max-w-lg  text-left font-semibold"
             >
               {t("welcome")}
             </motion.p>

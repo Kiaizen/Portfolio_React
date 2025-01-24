@@ -9,7 +9,7 @@ const IntroLinks = () => {
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
-              className="flex justify-center lg:gap-20 text-5xl gap-6  m-10"
+              className="flex  lg:gap-20 text-5xl gap-6  my-10"
             >
               <a className="hover:text-blue-500" href="https://www.linkedin.com/in/felipe-harão-marques-fernandes-madeira-100521243">
                 <FaLinkedin />

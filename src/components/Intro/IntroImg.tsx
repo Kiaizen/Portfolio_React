@@ -7,7 +7,7 @@ const IntroImg = () => {
       variants={fadeIn("down", 0.5)}
       initial="hidden"
       whileInView={"show"}
-      className="m-auto w-24 lg:w-96 order-first lg:order-1"
+      className="m-auto w-24 md:w-3/12 order-first md:order-1"
     >
       <img className="rounded-full" src={Eu} alt="Myself"/>
     </motion.div>

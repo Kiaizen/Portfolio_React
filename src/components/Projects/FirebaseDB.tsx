@@ -2,6 +2,7 @@ import { database } from "./FirebaseConfig"; // Importa o arquivo de configuraç
 import { ref, set, onValue } from "firebase/database";
 import BackAw from "../../assets/turn-back.png";
 import { useEffect, useState } from "react";
+import ProjectWrapper from "../wrapper/ProjectsWrapper";
 
 // Função para adicionar produtos
 const adicionarProdutos = async () => {
@@ -27,7 +28,7 @@ const adicionarProdutos = async () => {
 adicionarProdutos();
 
 type Props = {
-  setRealTimeToggle: (value: boolean) => void;
+  onToggleProjectState: (value: boolean) => void;
 };
 type Produto = {
   id: string;
@@ -36,7 +37,7 @@ type Produto = {
   preco: number;
 };
 
-export const RealtimeDatabase = ({ setRealTimeToggle }: Props) => {
+export const RealtimeDatabase = ({ onToggleProjectState }: Props) => {
   const [produtos, setProdutos] = useState<Produto[]>([]);
 
   useEffect(() => {
@@ -57,10 +58,10 @@ export const RealtimeDatabase = ({ setRealTimeToggle }: Props) => {
   }, []);
 
   return (
-    <div className="flex-col border rounded-xl flex  w-11/12 h-72">
+    <ProjectWrapper>
       <button
         onClick={() => {
-          setRealTimeToggle(true);
+          onToggleProjectState(true);
         }}
         className=" w-6 m-5"
       >
@@ -85,6 +86,6 @@ export const RealtimeDatabase = ({ setRealTimeToggle }: Props) => {
         </tbody>
       </table>
       <button onClick={adicionarProdutos}>Adicionar Produto</button>
-    </div>
+    </ProjectWrapper>
   );
 };
