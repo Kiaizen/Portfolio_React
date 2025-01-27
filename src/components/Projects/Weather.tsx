@@ -65,14 +65,14 @@ const Weather = ({ onToggleProjectState }: Props) => {
         <img src={OpenW} alt="OpenWeatherIcon" className="mx-auto"/>
       </div>
       <div>
-        <form className="flex flex-col md:flex-row gap-8 m-6 justify-around">
+        <form className="flex flex-col md:flex-row items-center text-2xl gap-8 m-6 justify-around">
           <input
             type="text"
             onChange={cityHandler}
             className="bg-transparent border-b focus:border-accent outline-none placeholder:text-white"
             placeholder={t("pwtext")}
           />
-          <button className="btn btn-lg font-bold m-5" onClick={confirmHandler}>
+          <button className="btn btn-lg md:text-2xl font-bold m-5" onClick={confirmHandler}>
             {loading ? `${t("pwtext1")}` : `${t("pwtext2")}`}
           </button>
         </form>
@@ -80,13 +80,13 @@ const Weather = ({ onToggleProjectState }: Props) => {
       <div>
         {error ? (
           <div>
-            <p className="text-red-500 font-bold text-2xl text-center">
+            <p className="text-red-500 font-bold md:text-3xl text-center">
                {t("pwtext3")}
             </p>
           </div>
         ) : (
           condition && (
-            <div className="flex items-center justify-center p-10">
+            <div className="flex items-center md:text-2xl justify-center p-10">
               <div key={condition.name}>
                 <h2>
                   {t("pwtext4")}

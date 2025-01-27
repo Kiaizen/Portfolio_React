@@ -28,10 +28,10 @@ const Projects = () => {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}
-            className="flex-1 flex flex-col gap-y-10"
+            className="flex-1 flex flex-col"
           >
             <h2 className="h2 leading-tight font-bold text-accent">
-              {t("projects")} <br />
+              {t("projects")}
             </h2>
             <p className="text-2xl ">{t("ptext1")}</p>
           </motion.div>

@@ -5,9 +5,9 @@ interface Props {
 
 const PDescription = ({project, description}:Props) =>{
     return(
-        <div>
-            <h2>{project}</h2>
-            <p>{description}</p>
+        <div className="my-10">
+            <h2 className="text-3xl font-black">{project}</h2>
+            <p className="text-2xl">{description}</p>
         </div>
     )
 }

@@ -10,8 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/nodejs": "^5.0.2",
     "@types/react-scroll": "^1.8.10",
     "axios": "^1.6.2",
+    "emailjs-com": "^3.2.0",
     "firebase": "^11.0.2",
     "framer-motion": "^10.16.1",
     "i18next": "^23.7.8",

@@ -2,9 +2,35 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../../Variants";
 import { useTranslation } from "react-i18next";
 import Wrapper from "../wrapper/wrapper";
+import { useState } from "react";
+import { emailjsConfig } from "./EmailJSConfig";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
   const { t } = useTranslation();
+
+  const [formData, setFormData] = useState({
+    name:"",
+    email:"",
+    message:"",
+  })
+
+  const handleChange = (e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const {name,value} = e.target;
+    setFormData({...formData,[name]: value})
+  }
+
+  const handleSubmit = (e: React.FormEvent) =>{
+    e.preventDefault();
+    emailjs.send(emailjsConfig.serviceId,emailjsConfig.templateId,formData,emailjsConfig.publicKey).then(() => {
+      alert(`Message send successfully`)
+    },
+    (error:string) => {
+      alert(`Failed to send message.${error} Please try again`)
+    }
+  )
+  }
+  
   return (
     <section id="Contact" className="py-40 bg-gradient-to-b from-bgsecondary to-bgprimary">
       <Wrapper>
@@ -31,20 +57,29 @@ const Contact = () => {
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}
             className="flex-1 border rounded-2xl flex flex-col gap-y-6 pb-6 p-6 items-start"
-            name="contact"
+            onSubmit={handleSubmit}
           >
             <input
               className="bg-transparent border-b py-3 outline-none w-full  placeholder:text-white focus:border-accent transition-all"
               type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
               placeholder={t("ftext3")}
             />
             <input
               className="bg-transparent border-b py-3 outline-none w-full  placeholder:text-white focus:border-accent transition-all"
-              type="text"
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
               placeholder={t("ftext4")}
             />
             <textarea
               className="bg-transparent border-b py-12 outline-none w-full  placeholder:text-white focus:border-accent transition-all resize-none"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
               placeholder={t("ftext5")}
             ></textarea>
             <div>
