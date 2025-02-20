@@ -30,7 +30,7 @@ const Intro = () => {
                   2000,
                   "Designer",
                   2000,
-                  "Freelance",
+                  "Freelancer",
                   2000,
                 ]}
                 speed={50}

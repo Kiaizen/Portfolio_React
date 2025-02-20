@@ -1,35 +1,10 @@
-import { database } from "./FirebaseConfig"; // Importa o arquivo de configuração
+import { database } from "./FirebaseConfig";
 import { ref, set, onValue } from "firebase/database";
 import BackAw from "../../assets/turn-back.png";
 import { useEffect, useState } from "react";
 import ProjectWrapper from "../wrapper/ProjectsWrapper";
 
-// Função para adicionar produtos
-const adicionarProdutos = async () => {
-  try {
-    await set(ref(database, "Produtos/"), {
-      "1": {
-        nome: "Cadeira de Escritório",
-        descricao: "Cadeira ergonômica ajustável",
-        preco: 599.9,
-      },
-      "2": {
-        nome: "Mesa de Jantar",
-        descricao: "Mesa de madeira para 6 pessoas",
-        preco: 1200.0,
-      },
-    });
-    console.log("Produtos adicionados com sucesso!");
-  } catch (error) {
-    console.error("Erro ao adicionar produtos:", error);
-  }
-};
-
-adicionarProdutos();
-
-type Props = {
-  onToggleProjectState: (value: boolean) => void;
-};
+// Definição do tipo Produto
 type Produto = {
   id: string;
   nome: string;
@@ -37,33 +12,66 @@ type Produto = {
   preco: number;
 };
 
-export const RealtimeDatabase = ({ onToggleProjectState }: Props) => {
-  const [produtos, setProdutos] = useState<Produto[]>([]);
+// Classe para gerenciar os produtos no Firebase
+class ProdutoService {
+  private dbRef = ref(database, "Produtos");
 
-  useEffect(() => {
-    const produtosRef = ref(database, "Produtos");
-    const unsubscribe = onValue(produtosRef, (snapshot) => {
+  async adicionarProdutos(): Promise<void> {
+    try {
+      await set(this.dbRef, {
+        "1": {
+          nome: "Cadeira de Escritório",
+          descricao: "Cadeira ergonômica ajustável",
+          preco: 599.9,
+        },
+        "2": {
+          nome: "Mesa de Jantar",
+          descricao: "Mesa de madeira para 6 pessoas",
+          preco: 1200.0,
+        },
+      });
+      console.log("Produtos adicionados com sucesso!");
+    } catch (error) {
+      console.error("Erro ao adicionar produtos:", error);
+    }
+  }
+
+  observarProdutos(callback: (produtos: Produto[]) => void): () => void {
+    return onValue(this.dbRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
         const produtosArray = Object.entries(data).map(([key, value]) => ({
           id: key,
           ...(value as Omit<Produto, "id">),
         }));
-        setProdutos(produtosArray);
+        callback(produtosArray);
       } else {
-        setProdutos([]);
+        callback([]);
       }
     });
+  }
+}
+
+// Componente principal
+const produtoService = new ProdutoService();
+
+type Props = {
+  onToggleProjectState: (value: boolean) => void;
+};
+
+export const RealtimeDatabase = ({ onToggleProjectState }: Props) => {
+  const [produtos, setProdutos] = useState<Produto[]>([]);
+
+  useEffect(() => {
+    const unsubscribe = produtoService.observarProdutos(setProdutos);
     return () => unsubscribe();
   }, []);
 
   return (
     <ProjectWrapper>
       <button
-        onClick={() => {
-          onToggleProjectState(true);
-        }}
-        className=" w-6 m-5"
+        onClick={() => onToggleProjectState(true)}
+        className="w-6 m-5"
       >
         <img src={BackAw} alt="Back button" />
       </button>
@@ -85,7 +93,9 @@ export const RealtimeDatabase = ({ onToggleProjectState }: Props) => {
           ))}
         </tbody>
       </table>
-      <button onClick={adicionarProdutos}>Adicionar Produto</button>
+      <button onClick={() => produtoService.adicionarProdutos()}>
+        Adicionar Produto
+      </button>
     </ProjectWrapper>
   );
 };
