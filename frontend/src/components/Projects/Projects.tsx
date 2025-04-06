@@ -9,21 +9,11 @@ import { RealtimeDatabase } from "./FirebaseDB";
 import Wrapper from "../wrapper/wrapper";
 import ProjectBox from "./ProjectBox";
 import PDescription from "./PDescription";
-import UserForm from "./UserForm";
-import UserList from "./UserLists";
 
-interface User {
-  id: string;
-  name: string;
-  email: string;
-  mobile: string;
-  password: string;
-}
 
 const Projects = () => {
   const [weatherToggle, setWeatherToggle] = useState(false);
   const [realTimeToggle, setRealTimeToggle] = useState(false);
-  const [editingUser, setEditingUser] = useState<User | null>(null);
 
   const { t } = useTranslation();
 
@@ -45,25 +35,6 @@ const Projects = () => {
               {t("projects")}
             </h2>
             <p className="text-2xl ">{t("ptext1")}</p>
-          </motion.div>
-
-          <motion.div
-            variants={fadeIn("right", 0.2)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{ once: false, amount: 0.3 }}
-            
-          >
-            <ProjectBox
-              imgToggle={weatherToggle}
-              setProjectState={setWeatherToggle}
-              img={Img2}
-              firstSpan="React"
-              secondSpan="WeatherAPI"
-            >
-              <Weather onToggleProjectState={() => setWeatherToggle(false)} />
-            </ProjectBox>
-            <PDescription project="WeatherAPI" description="The Weather Forecast App is an interactive project that allows users to check real-time weather conditions for any city worldwide. Leverages the OpenWeather API to fetch weather data dynamically."/>
           </motion.div>
           <motion.div
             variants={fadeIn("right", 0.2)}
@@ -101,8 +72,6 @@ const Projects = () => {
               />
             </ProjectBox>
           </motion.div>
-          <UserForm editingUser={editingUser} setEditingUser={setEditingUser}/>
-          <UserList setEditingUser={setEditingUser}/>
         </div>
       </Wrapper>
     </section>
