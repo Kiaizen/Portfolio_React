@@ -9,6 +9,7 @@ import { RealtimeDatabase } from "./FirebaseDB";
 import Wrapper from "../wrapper/wrapper";
 import ProjectBox from "./ProjectBox";
 import PDescription from "./PDescription";
+import Tarefas from "./Tarefas";
 
 
 const Projects = () => {
@@ -72,6 +73,7 @@ const Projects = () => {
               />
             </ProjectBox>
           </motion.div>
+          <Tarefas/>
         </div>
       </Wrapper>
     </section>
