@@ -33,7 +33,7 @@ i18n
           about: "About me",
           atext:
             "Life's daily hustle often makes us lose sight of what truly matters. But when we take a moment to reflect and embrace gratitude for simply being alive, we start planning for a more meaningful future. This mindset led me to pursue a new goal: building a solid career in the tech industry.",
-          atext1:"I'm currently in my second semester of college and deeply committed to my studies in IT. My aim is not just to enter the job market but to stand out as a skilled and adaptable professional. I thrive on challenges and am always eager to learn and overcome any obstacles that come my way.",
+          atext1:"I'm currently in my third semester of college and deeply committed to my studies in IT. My aim is not just to enter the job market but to stand out as a skilled and adaptable professional. I thrive on challenges and am always eager to learn and overcome any obstacles that come my way.",
           atext11:"My professional journey has provided me with valuable corporate experience. I worked at UFC for six years, took on gigs as a bartender, and also worked in an accounting office. These experiences helped me develop strong teamwork skills, the ability to work independently, and emotional intelligence, which I consider key to success.",
           atext12:"I have completed training in UX Design, agile methodologies, front-end development, and back-end development with a focus on JavaScript and Spring Boot. I prioritize writing clean, efficient, and scalable code, always following best practices in software development.",
           atext13:"I am passionate about learning and determined to succeed in my career as a developer. I'm ready to contribute to challenging projects and create solutions that make a positive impact.",
@@ -76,7 +76,7 @@ i18n
           atext:
             "A vida, em sua correria cotidiana, muitas vezes nos faz perder de vista o que realmente importa. Mas, quando paramos para refletir e cultivamos gratidão por estarmos vivos, começamos a planejar um futuro mais significativo. Foi isso que me motivou a traçar um novo objetivo: construir uma carreira sólida na área de tecnologia.",
           atext1:
-            "Atualmente, estou no segundo semestre da faculdade e me dedicando intensamente aos estudos em TI. Minha meta é não apenas ingressar no mercado, mas também me destacar como um profissional qualificado e adaptável. Adoro desafios e estou sempre pronto para aprender e superar qualquer obstáculo que surgir.",
+            "Atualmente, estou no terceiro semestre da faculdade e me dedicando intensamente aos estudos em TI. Minha meta é não apenas ingressar no mercado, mas também me destacar como um profissional qualificado e adaptável. Adoro desafios e estou sempre pronto para aprender e superar qualquer obstáculo que surgir.",
           atext11:
             "Minha trajetória profissional me proporcionou uma rica experiência no ambiente corporativo. Trabalhei na UFC por seis anos, fiz bicos como barman e também atuei em um escritório de contabilidade. Essas vivências desenvolveram minha habilidade de trabalhar tanto em equipe quanto de forma independente, e inteligência emocional, que considero ser a chave para o sucesso.",
           atext12:
