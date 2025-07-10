@@ -21,11 +21,20 @@ const Tarefas: React.FC = () => {
     console.log('Resposta bruta:', text);
 
     const dados = JSON.parse(text);
-    setTarefas(dados);
+    
+    if (Array.isArray(dados)) {
+      setTarefas(dados);
+    } else {
+      console.error('Resposta não é uma lista de tarefas:', dados);
+      setTarefas([]); // evitar crash
+    }
+
   } catch (err) {
     console.error('Erro ao carregar tarefas:', err);
+    setTarefas([]);
   }
 };
+
 
   useEffect(() => {
     carregarTarefas();
