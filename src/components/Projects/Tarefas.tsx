@@ -6,7 +6,7 @@ type Tarefa = {
   descricao: string;
 };
 
-const API = 'backendphp-production.up.railway.app'; 
+const API = 'backendphp-production.up.railway.app/read.php'; 
 
 const Tarefas: React.FC = () => {
   const [tarefas, setTarefas] = useState<Tarefa[]>([]);
