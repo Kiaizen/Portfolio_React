@@ -15,10 +15,17 @@ const Tarefas: React.FC = () => {
   const [idEditando, setIdEditando] = useState<number | null>(null);
 
   const carregarTarefas = async () => {
+  try {
     const res = await fetch(`${API}/read.php`);
-    const dados = await res.json();
+    const text = await res.text();
+    console.log('Resposta bruta:', text);
+
+    const dados = JSON.parse(text);
     setTarefas(dados);
-  };
+  } catch (err) {
+    console.error('Erro ao carregar tarefas:', err);
+  }
+};
 
   useEffect(() => {
     carregarTarefas();
