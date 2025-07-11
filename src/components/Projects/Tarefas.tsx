@@ -82,21 +82,21 @@ const Tarefas: React.FC = () => {
   };
 
   return (
-    <div className="max-w-xl mx-auto p-4 text-black">
+    <div className="max-w-xl mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4 text-center">Tarefas</h1>
 
       <form onSubmit={salvarTarefa} className="space-y-4 mb-8">
         <input
           type="text"
           placeholder="Título"
-          className="w-full border rounded px-3 py-2"
+          className="w-full border rounded px-3 py-2 bg-transparent"
           value={titulo}
           onChange={(e) => setTitulo(e.target.value)}
           required
         />
         <textarea
           placeholder="Descrição"
-          className="w-full border rounded px-3 py-2"
+          className="w-full border rounded px-3 py-2 bg-transparent"
           value={descricao}
           onChange={(e) => setDescricao(e.target.value)}
         />
