@@ -44,7 +44,7 @@ i18n
           projects: "Professional Experience",
           ptext: "projects",
           ptext1:
-            "Here are some of my skills, you can interact with them by clicking on them.",
+            "Here are some of my projects, you can interact with them by clicking on them.",
           ptext2: "View all projects",
           pwtext: "Your city",
           pwtext1: "Searching...",
@@ -90,7 +90,7 @@ i18n
           projects: "Experiência Profissional",
           ptext: "Projetos",
           ptext1:
-            "Aqui estão algumas habilidades, você pode interagir clickando nelas.",
+            "Aqui estão alguns projetos, você pode interagir clickando neles.",
           ptext2: "Ver todos os projetos",
           pwtext: "Sua cidade",
           pwtext1: "Pesquisando...",

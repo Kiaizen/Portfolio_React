@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../../Variants";
 import Img2 from "../../assets/OpenWReact.webp";
 import Img3 from "../../assets/firebase.png";
+import Img4 from "../../assets/php.webp";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import Weather from "./Weather";
@@ -15,6 +16,7 @@ import Tarefas from "./Tarefas";
 const Projects = () => {
   const [weatherToggle, setWeatherToggle] = useState(false);
   const [realTimeToggle, setRealTimeToggle] = useState(false);
+  const [tarefasToggle, setTarefasToggle] = useState(false);
 
   const { t } = useTranslation();
 
@@ -65,7 +67,7 @@ const Projects = () => {
               imgToggle={realTimeToggle}
               setProjectState={setRealTimeToggle}
               img={Img3}
-              firstSpan="React"
+              firstSpan="SGDB"
               secondSpan="Real Time Database"
             >
               <RealtimeDatabase
@@ -73,7 +75,25 @@ const Projects = () => {
               />
             </ProjectBox>
           </motion.div>
-          <Tarefas/>
+          <motion.div
+            variants={fadeIn("right", 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.3 }}
+          >
+            <ProjectBox
+              imgToggle={tarefasToggle}
+              setProjectState={setTarefasToggle}
+              img={Img4}
+              firstSpan="PHP"
+              secondSpan="MYSQL com PHP"
+            >
+              <Tarefas
+                onToggleProjectState={() => setTarefasToggle(false)}
+              />
+            </ProjectBox>
+          </motion.div>
+          
         </div>
       </Wrapper>
     </section>
